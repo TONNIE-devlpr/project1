@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>my order page</title>
+        <style>
+            .header{
+                background-color:palegreen;
+                display:flex;
+                flex-direction:row;
+                height:100px;
+            }
+            .left-side{
+                width:200px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background-color:paleturquoise;
+            }
+            .image{
+                width:90px;
+            }
+            .middle-side{
+                display:flex;
+                flex:1;
+                align-items:center;
+            }
+            .search-button{
+                height:30px;
+                border:1px;
+                border-radius:0px;
+                border-color:grey;
+                border-style:solid;
+                flex:1;
+                margin-left:30px;
+                width:0px;
+                max-width:300px;
+
+            }
+            .search-icon{
+                width:20px;
+                margin-left:5px;
+            }
+            .search-butt {
+                position:relative;
+            }
+            .search-butt .tooltip{
+                position:absolute;
+                background-color:grey;
+                color:white;
+                padding:2px 4px;
+                bottom:-31px;
+                right:-20px;
+                border:none;
+                border-radius:4px;
+                font-family:arial;
+                opacity:0;
+                pointer-events:none;
+                transition:0.5s;
+
+            }
+            .search-butt:hover .tooltip{
+                opacity:1;
+            }
+            .right-side{
+                width:200px;
+                display:flex;
+                background-color:palegoldenrod;
+                align-items: center;
+            }
+            .favourite{
+                width:30px;
+                margin-right:10px;
+            }
+            .favourite-button{
+                position:relative;
+            }
+            .favourite-button .tooltip{
+                position:absolute;
+                background-color:grey;
+                color:white;
+                font-family:arial;
+                padding:2px 4px;
+                bottom:-27px;
+                left:-23px;
+                border:none;
+                border-radius:4px;
+                opacity:0;
+                transition:opacity 0.5s;
+                pointer-events:none;
+            }
+            .favourite-button:hover .tooltip{
+                opacity:1;
+            }
+            .share-icon{
+                width:30px;
+                margin-left:20px;
+                margin-right:20px;
+            }
+            .share-button{
+                position:relative;
+
+            }
+            .share-button .tooltip{
+                position:absolute;
+                background-color:grey;
+                color:white;
+                font-family:arial;
+                padding:2px 4px;
+                bottom:-27px;
+                right:10px;
+                border:none;
+                border-radius:4px;
+                opacity:0;
+                transition:opacity 0.5s;
+                pointer-events:none;
+            }
+            .share-button:hover .tooltip{
+                opacity:1;
+            }
+            .dots{
+                width:30px;
+                margin-left:10px;
+                
+            }
+            .dots-button{
+                position:relative;
+            }
+            .dots-button .tooltip{
+                position:absolute;
+                background-color:grey;
+                color:white;
+                padding:2px 4px;
+                font-family:arial;
+                bottom:-27px;
+                right:-7px;
+                border:none;
+                border-radius:4px;
+                opacity:0;
+                transition:opacity 0.5s;
+                pointer-events:none;
+            }
+            .dots-button:hover .tooltip{
+                opacity:1;
+            }
+        </style>
+    </head>
+    <body>
+         <div class="header">
+            <div class="left-side">
+                <img class="image" src="icons/acey_t_logo_larger.svg">
+            </div>
+            <div class="middle-side">
+                <input class="search-button" type="text" placeholder="search">
+                <div class="search-butt">
+                    <img class="search-icon" src="icons/490px-Magnifying_glass_icon.svg.png">
+                    <div class="tooltip">
+                        search
+                    </div>
+                </div>
+                
+            </div>
+            <div class="right-side">
+                <div class="favourite-button">
+                    <img class="favourite" src="icons/free-favourite-icon-2765-thumb.png ">
+                    <div class="tooltip">
+                        favourite
+                    </div>
+                </div>
+                <div class="share-button">
+                    <img class="share-icon" src="icons/share.png">
+                    <div class="tooltip">
+                        share
+                    </div>
+                </div>
+                <div class="dots-button">
+                    <img class="dots" src="icons/3-vertical-dots-icon.png">
+                    <div class="tooltip">
+                        more
+                    </div>
+                </div>
+
+               
+              
+                
+            </div>
+         </div>
+    </body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home page</title>
+        <style>
+            .homepage{
+                display:flex;
+                flex-direction: column;
+            }
+            .headers{
+                position:fixed;
+                width:100%;
+                
+            }
+            .first-header{
+                display:flex;
+                flex-direction:row;
+                align-items: center;
+                background-color: rgb(205, 198, 198);
+                height: 50px;
+                margin-top:-8px;
+                padding-right:15px;
+            }
+            .left-side{
+                display:flex;
+                flex-direction: row;
+                align-items: center;
+                width:250px;
+                position:relative;
+            }
+            .humb-icon{
+                width:40px;
+                margin-left:3px;
+            }
+            .humb-button .tooltip{
+                position:absolute;
+                background-color:grey;
+                color:white;
+                padding:2px 4px;
+                font-family:arial;
+                border:none;
+                border-radius:4px;
+                bottom:-22px;
+                cursor:pointer;
+                opacity:0;
+                pointer-events:none;
+                transition:opacity 0.5s;
+            }
+            .humb-button:hover .tooltip{
+                opacity:1;
+            }
+
+            .middle-side{
+                display: flex;
+                flex:1;
+                align-items: center;
+                position:relative;
+                margin-left:30px;
+                margin-right:40px;
+            }
+            .logo{
+                width:70px;
+                margin-left:30px;
+            }
+            .search-bar{
+                display: flex;
+                flex:1;
+                width:0px;
+                max-width:300px;
+                height: 30px;
+                border:1px;
+                border-style:solid;
+                border-radius:0px;
+                margin-left:20px;
+            }
+            .search-icon{
+                width:20px;
+                display:inline-block;
+                margin-left:5px;
+
+            }
+            .search-button{
+                position:relative;
+            }
+            .search-button .tooltip{
+                position:absolute;
+                background-color:grey;
+                color:white;
+                font-family:arial;
+                padding:2px 4px;
+                border:none;
+                border-radius:4px;
+                bottom:-32px;
+                opacity:0;
+                pointer-events:none;
+                transition:opacity 0.5s;
+            }
+            .search-button:hover .tooltip{
+                opacity:1;
+            }
+            .right-side{
+                justify-content: end;
+                display:flex;
+                flex-direction: row;
+                align-items: center;
+                width:300px;
+                margin-right: 1px;
+                margin-left:2px;
+            }
+            .profile1{
+                width:50px;
+                margin-left:20px;
+                border-radius:25px;
+            }
+            .profile{
+                position:relative;
+                display:flex;
+            }
+            .profile .tooltip{
+                font-family:arial;
+                font-size:1px;
+                position:absolute;
+                background-color:rgb(104, 102, 102);
+                color:white;
+                white-space: nowrap;
+                bottom: -20px;
+                opacity: 0;
+                border:none;
+                border-radius:4px;
+                padding:2px 4px;
+                pointer-events:none;
+                transition: opacity 0.5s;
+            }
+            .profile:hover .tooltip{
+                opacity:1;
+            }
+            .share-icon{
+                width:25px;
+                margin-right:10px;
+            }
+            .share-button{
+                position:relative;
+            }
+            .share-button .tooltip{
+                position:absolute;
+                background-color:grey;
+                color:white;
+                padding:2px 4px;
+                border:none;
+                border-radius:3px;
+                font-family:arial;
+                bottom:-30px;
+                right:-3px;
+                opacity:0;
+                transition: opacity 0.5s;
+                pointer-events:none;
+            }
+            .share-button:hover .tooltip{
+                opacity:1;
+            }
+            .login,
+            .signin{
+                height:40px;
+                width:70px;
+                background-color:black;
+                color:white;
+                margin-left:10px;
+                border:none;
+                border-radius:7px;
+                cursor:pointer;
+                transition: background-color 0.6s,color 0.6s;
+            }
+            .login:hover ,
+            .signin:hover{
+                background-color:rgb(255, 255, 255);
+                color:black;
+                border:3px;
+                border-style:solid;
+                border-radius:8px;
+                border-color:black;
+            }
+            .login:active,
+            .signin:active{
+                background-color: black;
+                color:white;
+            }
+            .second-header{
+                display:flex;
+                background-color: rgb(0, 0, 0);
+                height:30px;
+                align-items:center;
+                font-family:arial;
+                font-size:20px;
+                justify-content: space-between;
+                border-bottom-left-radius:5px ;
+                border-bottom-right-radius: 5px;
+                padding-right:15px;
+            }
+            .home,
+            .potrait,
+            .tutorial,
+            .myorder,
+            .about{
+                background-color: white;
+                color:black;
+                height: 25px;
+                width:100px;
+                text-align:center;
+                border-radius:5px;
+                margin-left:10px;
+                transition: background-color 0.6s, color 0.6s;
+            }
+            .home:hover,
+            .potrait:hover,
+            .tutorial:hover,
+            .myorder:hover,
+            .about:hover{
+                background-color: rgb(69, 66, 255);
+                color:white;     
+            }
+            .home:active,
+            .potrait:active,
+            .tutorial:active,
+            .myorder:active,
+            .about:active{
+                background-color:rgb(0, 0, 43);
+                color:white;
+            }
+
+            .content{
+                margin-top:90px;
+                display:grid;
+                margin-left:25px;
+                grid-template-columns:300px 300px 300px 300px ;
+               
+                
+            }
+            .thumbnail{
+                width:190px;
+                margin-bottom:20px;
+                margin-top:20px;
+                border:1px;
+                border-style:solid;
+                border-radius:10px;
+
+            }
+            .thumbnail-box{
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                border:1px;
+                border-style:solid;
+                border-color:grey;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="homepage">
+            <div class="headers">
+                <div class="first-header">
+              <div class="left-side">
+                <div class="humb-button">
+                  <img class="humb-icon" src="icons/humb.png">
+
+                  <div class="tooltip">
+                    more
+                  </div>
+                </div>
+
+
+                  <img class="logo" src="logos/acey_t_logo_larger.svg">
+               </div>
+               <div class="middle-side">
+             
+                   <input class="search-bar" type="text" placeholder="search">
+
+                   <div class="search-button">
+                      <img class="search-icon" src="icons/490px-Magnifying_glass_icon.svg.png">
+
+                      <div class="tooltip">
+                        search
+                      </div>
+                   </div>
+
+                 
+                </div>
+                <div class="right-side">
+                    <div class="share-button">
+                        <img class="share-icon" src="icons/share.png">
+
+                        <div class="tooltip">
+                            share
+                        </div>
+                    </div>
+                   
+
+                   <div class="profile">
+                        <img class="profile1" src="logos/profile_1.png">
+
+                        <div class="tooltip">
+                            my profile
+
+                        </div>
+
+                   </div>
+
+                  
+
+                   <button class="login">Login</button>
+                   <button class="signin">Sign in</button>
+                </div>
+            </div>
+
+            <div class="second-header">
+              <div class="home">home</div>
+
+              <div class="potrait">potrait</div>
+
+              <div class="tutorial">tutorials</div>
+
+              <div class="myorder">myorder</div>
+
+              <div class="about"> about us</div>
+
+              
+            </div>
+            </div>
+            
+
+            <div class="content">
+                <div class="thumbnail-box">
+                    <img class="thumbnail" src="thumbnails/DSC_0351-03.jpeg">
+                </div>
+
+                <div class="thumbnail-box">
+                    <img class="thumbnail" src="thumbnails/DSC_0411-01.jpeg">
+                </div>
+
+                <div class="thumbnail-box">
+                    <img class="thumbnail" src="thumbnails/DSC_0430-01.jpeg">
+                </div>
+
+                <div class="thumbnail-box">
+                    <img class="thumbnail" src="thumbnails/DSC_0583.JPG">
+                </div>
+
+                <div class="thumbnail-box">
+                    <img class="thumbnail" src="thumbnails/DSC_0584.JPG">
+                </div>
+
+                <div class="thumbnail-box">
+                    <img class="thumbnail" src="thumbnails/IMG-20230624-WA0080.jpg">
+                </div>
+
+                <div class="thumbnail-box">
+                    <img class="thumbnail" src="thumbnails/IMG-20230624-WA0081.jpg">
+                </div>
+
+                <div class="thumbnail-box">
+                    <img class="thumbnail" src="thumbnails/IMG-20240614-WA0104.jpg">
+                </div>
+
+                <div class="thumbnail-box">
+                    <img class="thumbnail" src="thumbnails/IMG-20240614-WA0121.jpg">
+                </div>
+
+                <div class="thumbnail-box">
+                    <img class="thumbnail" src="thumbnails/IMG_20221217_175239_363-01.jpeg">
+                </div>
+
+                <div class="thumbnail-box">
+                    <img class="thumbnail" src="thumbnails/IMG_20230623_180505_019-02.jpeg">
+                </div>
+
+                <div class="thumbnail-box">
+                    <img class="thumbnail" src="thumbnails/IMG_20240106_090534_994.jpg">
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+</html>
